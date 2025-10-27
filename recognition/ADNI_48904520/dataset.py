@@ -12,7 +12,7 @@ from PIL import Image
 class ADNIDataset(Dataset):
     """
     Dataset class for ADNI brain MRI classification
-    Two classes: AD (Alzheimer's Disease) and NC (Normal Control)
+    Two classes: AD (Alzheimer's Disease) and NC (Normal Cognitive)
     """
 
     def __init__(self, data_dir, split='train', transform=None):
