@@ -107,12 +107,6 @@ def main():
     parser.add_argument('--num_workers', type=int, default=4,
                         help='Data loader workers')
 
-    # Class arguments
-    parser.add_argument('--class_weight_nc', type=float, default=1.0,
-                        help='Weight for NC class (to handle imbalance)')
-    parser.add_argument('--class_weight_ad', type=float, default=2.0,
-                        help='Weight for AD class')
-
     args = parser.parse_args()
 
     # Device
@@ -130,7 +124,7 @@ def main():
     print("=" * 60)
 
     # Load test data
-    print(f"Running slice-level predictions on {args.split} set...")
+    print(f"Running slice-level predictions on test set...")
     _, _, test_loader = get_dataloaders(
         root_dir=args.data_dir,
         batch_size=args.batch_size,
