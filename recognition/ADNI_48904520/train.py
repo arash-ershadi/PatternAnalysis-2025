@@ -113,7 +113,7 @@ def main():
     parser.add_argument('--num_workers', type=int, default=4,
                         help='Data loader workers')
 
-    # Loss arguments
+    # Class arguments
     parser.add_argument('--class_weight_nc', type=float, default=1.0,
                         help='Weight for NC class (to handle imbalance)')
     parser.add_argument('--class_weight_ad', type=float, default=2.0,
@@ -153,7 +153,7 @@ def main():
 
     # Create data loaders
     print("\nLoading data...")
-    train_loader, val_loader, test_loader = get_dataloaders(
+    train_loader, val_loader, _ = get_dataloaders(
         root_dir=args.data_dir,
         batch_size=args.batch_size,
         num_workers=args.num_workers,
