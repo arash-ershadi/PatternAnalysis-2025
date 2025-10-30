@@ -1,12 +1,11 @@
 import os
 
-import numpy as np
 import torch
 import torchvision.transforms as transforms
 from torch.utils.data import Dataset, DataLoader
 
+import numpy as np
 from PIL import Image
-
 
 class ADNIDataset(Dataset):
     """
@@ -70,7 +69,6 @@ class ADNIDataset(Dataset):
 
     def __len__(self):
         return len(self.samples)
-
 
 def get_dataloaders(root_dir, batch_size=32, num_workers=4,
                     val_split=0.2):
